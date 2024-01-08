@@ -23,6 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.addappt.R
+import com.example.addappt.compose.widgets.SearchTextField
 
 class SettingsScreen {
 
@@ -55,11 +56,9 @@ class SettingsScreen {
                 Column(
                     modifier = Modifier
                         .padding(it)
-                        .fillMaxSize(),
-                    Arrangement.Center,
-                    Alignment.CenterHorizontally
+                        .fillMaxSize()
                 ){
-                    Text("Settings Screen", fontSize = 32.sp)
+                    SearchTextField()
                 }
             }
         )
