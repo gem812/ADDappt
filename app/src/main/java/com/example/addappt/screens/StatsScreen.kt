@@ -13,10 +13,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
+import com.example.addappt.constants.Constants
 
 class StatsScreen {
 
-    val route = "stats"
+    val route = Constants.ScreenRoutes.STATS_SCREEN_ROUTE
 
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     @OptIn(ExperimentalMaterial3Api::class)

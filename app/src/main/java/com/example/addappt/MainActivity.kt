@@ -18,6 +18,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.addappt.screens.AddScreen
 import com.example.addappt.screens.HomeScreen
 import com.example.addappt.screens.MotivationScreen
+import com.example.addappt.screens.ProfileScreen
 import com.example.addappt.screens.SettingsScreen
 import com.example.addappt.screens.StatsScreen
 import com.example.addappt.ui.theme.ADDapptTheme
@@ -96,8 +97,9 @@ class MainActivity : ComponentActivity() {
                             )
                             NavigationBarItem(
                                 selected = backstackEntry.value?.destination?.route.equals(
-                                    SettingsScreen().route) ,
-                                onClick = { navController.navigate(SettingsScreen().route)},
+                                    SettingsScreen().route
+                                ),
+                                onClick = { navController.navigate(SettingsScreen().route) },
                                 label = {
                                     Text("Settings")
                                 },
@@ -130,8 +132,10 @@ class MainActivity : ComponentActivity() {
                             }
                             composable(SettingsScreen().route) {
                                 SettingsScreen().Create(navController = navController)
-
-                        }
+                            }
+                            composable(ProfileScreen().route) {
+                                ProfileScreen().Create(navController = navController)
+                            }
                         }
                     }
                 )

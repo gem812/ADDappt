@@ -13,10 +13,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
+import com.example.addappt.constants.Constants
 
 class HomeScreen {
 
-    val route = "home"
+    val route = Constants.ScreenRoutes.HOME_SCREEN_ROUTE
 
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     @OptIn(ExperimentalMaterial3Api::class)

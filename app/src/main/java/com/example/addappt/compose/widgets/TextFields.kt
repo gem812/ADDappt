@@ -10,7 +10,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -37,7 +36,7 @@ fun SearchTextField() {
             textFieldValue.value = it
         },
         modifier = Modifier
-            .padding(18.dp)
+            .padding(16.dp)
             .fillMaxWidth(),
         placeholder = {
             Row() {
