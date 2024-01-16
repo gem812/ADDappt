@@ -57,14 +57,30 @@ fun ClickableRowSettings(
 
 @Composable
 @Preview
-fun PreviewClickableRowSettings(){
+fun PreviewClickableRowSettingsWithSubText(){
     Surface(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxWidth()
     ){
         ClickableRowSettings(
             icon = R.drawable.ic_accounts,
             primaryText = "Accounts",
             subText = "Passwords etc.",
+            destinationRoute = "",
+            onClick = {}
+        )
+    }
+
+}
+
+@Composable
+@Preview
+fun PreviewClickableRowSettingsNoSubText(){
+    Surface(
+        modifier = Modifier.fillMaxWidth()
+    ){
+        ClickableRowSettings(
+            icon = R.drawable.ic_accounts,
+            primaryText = "Accounts",
             destinationRoute = "",
             onClick = {}
         )
