@@ -4,19 +4,13 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -25,6 +19,7 @@ import com.example.addappt.screens.AddScreen
 import com.example.addappt.screens.HomeScreen
 import com.example.addappt.screens.MotivationScreen
 import com.example.addappt.screens.ProfileScreen
+import com.example.addappt.screens.SettingsScreen
 import com.example.addappt.screens.StatsScreen
 import com.example.addappt.ui.theme.ADDapptTheme
 
@@ -102,15 +97,16 @@ class MainActivity : ComponentActivity() {
                             )
                             NavigationBarItem(
                                 selected = backstackEntry.value?.destination?.route.equals(
-                                    ProfileScreen().route) ,
-                                onClick = { navController.navigate(ProfileScreen().route)},
+                                    SettingsScreen().route
+                                ),
+                                onClick = { navController.navigate(SettingsScreen().route) },
                                 label = {
-                                    Text("Profile")
+                                    Text("Settings")
                                 },
                                 icon = {
                                     Icon(
-                                        painter = painterResource(id = R.drawable.ic_profile),
-                                        contentDescription = "Profile Icon"
+                                        painter = painterResource(id = R.drawable.ic_settings),
+                                        contentDescription = "Settings Icon"
                                     )
                                 }
                             )
@@ -134,10 +130,12 @@ class MainActivity : ComponentActivity() {
                                 StatsScreen().Create()
 
                             }
+                            composable(SettingsScreen().route) {
+                                SettingsScreen().Create(navController = navController)
+                            }
                             composable(ProfileScreen().route) {
-                                ProfileScreen().Create()
-
-                        }
+                                ProfileScreen().Create(navController = navController)
+                            }
                         }
                     }
                 )
