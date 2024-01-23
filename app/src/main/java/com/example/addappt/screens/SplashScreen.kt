@@ -30,7 +30,7 @@ class SplashScreen {
 
     val route = Constants.ScreenRoutes.SPLASH_SCREEN_ROUTE
     @Composable
-    fun Create() {
+    fun Create(navController: NavController) {
 
         val scale = remember { Animatable(0f) }
 
@@ -48,7 +48,7 @@ class SplashScreen {
                     )
                 )
                 delay(2000)
-//                navController.navigate(route = HomeScreen().route)
+                navController.navigate(route = IntroScreen().route)
             }
         )
 
@@ -84,11 +84,11 @@ class SplashScreen {
     }
 
 
-    @Preview
-    @Composable
-    fun PreviewSplashScreen(){
-        Create()
-    }
+//    @Preview
+//    @Composable
+//    fun PreviewSplashScreen(){
+//        Create()
+//    }
 
 
 }
