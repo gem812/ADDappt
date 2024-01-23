@@ -20,6 +20,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.addappt.screens.AddScreen
 import com.example.addappt.screens.HomeScreen
+import com.example.addappt.screens.IntroScreen
 import com.example.addappt.screens.MotivationScreen
 import com.example.addappt.screens.ProfileScreen
 import com.example.addappt.screens.SettingsScreen
@@ -128,7 +129,11 @@ class MainActivity : ComponentActivity() {
                         ) {
                             composable(SplashScreen().route){
                                 bottomNavVisibility.value = false
-                                SplashScreen().Create()
+                                SplashScreen().Create(navController = navController)
+                            }
+                            composable(IntroScreen().route){
+                                bottomNavVisibility.value = false
+                                IntroScreen().Create(navController = navController)
                             }
                             composable(HomeScreen().route) {
                                 bottomNavVisibility.value = true
